@@ -17,7 +17,7 @@ test('parameter is "123", gives 123', () => {
 });
 
 test('parameter is "abc", gives NAN', () => {
-  expect(toNumber("abc")).toBe(NAN);
+  expect(toNumber("abc")).toBe(NaN);
 });
 
 test('parameter is new Number(58), gives 58', () => {
@@ -25,7 +25,7 @@ test('parameter is new Number(58), gives 58', () => {
 });
 
 test('parameter is new String("abc"), gives NAN', () => {
-  expect(toNumber(new String("abc"))).toBe(NAN);
+  expect(toNumber(new String("abc"))).toBe(NaN);
 });
 
 test('parameter is new String("123"), gives 123', () => {
