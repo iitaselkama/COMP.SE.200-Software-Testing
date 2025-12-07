@@ -2,17 +2,10 @@
 import words from '../src/words.js'; //changed import path + added semicolons 
                                      // to ends of lines, everything else is AI
 
+// This tells Jest to use the mock implementation
+jest.mock('./.internal/unicodeWords.js')
 
-// Mock unicodeWords since it's imported from an internal module
-jest.mock('./.internal/unicodeWords.js', () => ({
-  __esModule: true,
-  default: jest.fn((str) => {
-    // simple mock splitting by spaces for demonstration
-    return str.split(/\s+/).filter(Boolean);
-  }),
-}));
-
-import unicodeWords from './.internal/unicodeWords.js';
+import unicodeWords from './.internal/unicodeWords.js'
 
 describe('words function', () => {
   beforeEach(() => {
