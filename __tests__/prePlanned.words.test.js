@@ -1,16 +1,16 @@
 import words from '../src/words.js';
 
 let testString = 'Granny, smith & apple';
-const noPatternArray = ["Granny", "Smith", "Apple"]
-const patterArray = ["Granny", "Smith", "&", "Apple"];
+const noPatternArray = ["Granny", "smith", "apple"]
+const patterArray = ["Granny", "smith", "&", "apple"];
 
 test('parameter is \"Granny, smith & apple", no pattern, \
-    gives Array["Granny", "Smith", "Apple"]', () => {
+    gives Array["Granny", "smith", "apple"]', () => {
   expect(words(testString)).toBe(noPatternArray);
 });
 
 test('parameter is \"Granny, smith & apple", pattern /[^, ]+/g, \
-    gives Array["Granny", "Smith", "&", "Apple"]', () => {
+    gives Array["Granny", "smith", "&", "apple"]', () => {
   expect(words(testString, /[^, ]+/g)).toBe(patterArray);
 });
 
