@@ -6,12 +6,12 @@ const patterArray = ["Granny", "smith", "&", "apple"];
 
 test('parameter is \"Granny, smith & apple", no pattern,\
     gives Array["Granny", "smith", "apple"]', () => {
-  expect(words(testString)).toBe(noPatternArray);
+  expect(words(testString)).toStrictEqual(noPatternArray);
 });
 
 test('parameter is \"Granny, smith & apple", pattern /[^, ]+/g,\
     gives Array["Granny", "smith", "&", "apple"]', () => {
-  expect(words(testString, /[^, ]+/g)).toBe(patterArray);
+  expect(words(testString, /[^, ]+/g)).toStrictEqual(patterArray);
 });
 
 
