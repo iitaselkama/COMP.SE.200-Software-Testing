@@ -5,7 +5,7 @@ import isArguments from '../src/isArguments.js';
 
 let t1_1 = [function() {return arguments}(), function() {return arguments}()];
 
-test('Give array [function() {return arguments}(), function() {return arguments}()] \
+test('Give array [function() {return arguments}(), function() {return arguments}()]\
   with predicate isArguments, gives true', () => {
   expect(every(t1_1, isArguments)).toBe(true);
 });
@@ -169,11 +169,13 @@ test('Give empty array with predicate isObject, gives true', () => {
 
 import isObjectLike from '../src/isObjectLike.js';
 
-test('Give array [[], {}, isObject] with predicate isObjectLike, gives true', () => {
-  expect(every(t8_1, isObjectLike)).toBe(true);
+let t8_3 = [[], {}, []];
+
+test('Give array [[], {}, []] with predicate isObjectLike, gives true', () => {
+  expect(every(t8_3, isObjectLike)).toBe(true);
 });
 
-test('Give array [[], {}, isObject, null] with predicate isObjectLike, gives false', () => {
+test('Give array [[], {}, isObject] with predicate isObjectLike, gives false', () => {
   expect(every(t8_2, isObjectLike)).toBe(false);
 });
 
@@ -184,16 +186,16 @@ test('Give empty array with predicate isObjectLike, gives true', () => {
 
 import isSymbol from '../src/isSymbol.js';
 
-let t9_1 = [Symbol.hasInstance, Symbol.iterator, Symbol.length];
+let t9_1 = [Symbol.iterator, Symbol.iterator, Symbol.iterator];
 
-test('Give array [Symbol.hasInstance, Symbol.iterator, Symbol.length] \
+test('Give array [Symbol.iterator, Symbol.iterator, Symbol.iterator]\
   with predicate isSymbol, gives true', () => {
   expect(every(t9_1, isSymbol)).toBe(true);
 });
 
 let t9_2 = [Symbol.hasInstance, "#", Symbol.iterator, Symbol.length];
 
-test('Give array [Symbol.hasInstance, "#", Symbol.iterator, Symbol.length] \
+test('Give array [Symbol.hasInstance, "#", Symbol.iterator, Symbol.length]\
   with predicate isSymbol, gives false', () => {
   expect(every(t9_2, isSymbol)).toBe(false);
 });
@@ -205,16 +207,16 @@ test('Give empty array with predicate isSymbol, gives true', () => {
 
 import isTypedArray from '../src/isTypedArray.js';
 
-let t10_1 = [Uint8Array, Uint8ClampedArray, Uint32Array];
+let t10_1 = [Uint8Array, Uint16Array, Uint32Array];
 
-test('Give array [Uint8Array, Uint8ClampedArray, Uint32Array] \
+test('Give array [Uint8Array, Uint16Array, Uint32Array]\
   with predicate isTypedArray, gives true', () => {
   expect(every(t10_1, isTypedArray)).toBe(true);
 });
 
 let t10_2 = [Uint8Array, Uint8ClampedArray, [], Uint32Array];
 
-test('Give array [Uint8Array, Uint8ClampedArray, [], Uint32Array] \
+test('Give array [Uint8Array, Uint8ClampedArray, [], Uint32Array]\
   with predicate isTypedArray, gives false', () => {
   expect(every(t10_2, isTypedArray)).toBe(false);
 });
