@@ -11,7 +11,7 @@ test('Filter negative numbers', () => {
     expect(filter(list, ( x ) => x < 0 )).toStrictEqual([-1]);
 });
 
-test('Filter zeros', () => {
+test('Filter three zeros', () => {
     const list = [123, 222, -1, 0, 0, 0];
     expect(filter(list, ( x ) => x == 0 )).toStrictEqual([0, 0, 0]);
 });
