@@ -21,7 +21,7 @@ test('Filter positive decimal numbers', () => {
     expect(filter(list, ( x ) => x > 0 )).toStrictEqual([6.6, 2.94, 3.18]);
 });
 
-test('Empty list', () => {
+test('Empty list123', () => {
     const list = [];
     expect(filter(list, ( x ) => x > 0 )).toStrictEqual([[]]);
 });
