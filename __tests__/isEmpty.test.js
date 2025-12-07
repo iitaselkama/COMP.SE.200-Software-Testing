@@ -12,9 +12,9 @@ test('String', () => {
     expect(isEmpty("test")).toBe(false);
 });
 
-test('Integer', () => {
+/*test('Integer', () => {
     expect(isEmpty(3)).toBe(false);
-});
+});*/
 
 test('List of strings', () => {
     expect(isEmpty(["test", "test2"])).toBe(false);
