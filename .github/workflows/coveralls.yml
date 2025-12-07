@@ -1,8 +1,6 @@
 name: Test & Coveralls
 
-on:
-  push:
-  pull_request:
+on: ["push", "pull_request"]
 
 jobs:
   test:
@@ -25,4 +23,7 @@ jobs:
       - name: Upload to Coveralls
         uses: coverallsapp/github-action@v2
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}   
+
+      - name: Coveralls GitHub Action
+        uses: coverallsapp/github-action@v2.3.6
