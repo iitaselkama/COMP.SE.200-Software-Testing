@@ -3,9 +3,9 @@ import words from '../src/words.js'; //changed import path + added semicolons
                                      // to ends of lines, everything else is AI
 
 // This tells Jest to use the mock implementation
-jest.mock('./.internal/unicodeWords.js')
+jest.mock('__tests__/__mocks__/.internal/unicodeWords.js')
 
-import unicodeWords from './.internal/unicodeWords.js'
+import unicodeWords from '__tests__/__mocks__/.internal/unicodeWords.js'
 
 describe('words function', () => {
   beforeEach(() => {
