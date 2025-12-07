@@ -2,6 +2,15 @@
 import words from '../src/words.js'; //changed import path + added semicolons 
                                      // to ends of lines, everything else is AI
 
+// __mocks__/.internal/unicodeWords.js
+export default function unicodeWords(str) {
+  // Very simple mock: split on whitespace and punctuation
+  // This ensures deterministic behavior for tests
+  return str
+    .split(/[\s.,!?;:]+/)
+    .filter(Boolean)
+};
+
 // Mock unicodeWords since it's imported from an internal module
 jest.mock('./.internal/unicodeWords.js', () => ({
   __esModule: true,
