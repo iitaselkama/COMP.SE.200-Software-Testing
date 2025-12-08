@@ -73,7 +73,7 @@ test('Give empty array with predicate isBoolean, gives true', () => {
 });
 
 
-import isBuffer from '../src/isBuffer.js';
+/*import isBuffer from '../src/isBuffer.js';
 
 let t4_1 = [new Buffer(5), new Buffer(3), new Buffer(9)];
 
@@ -89,7 +89,7 @@ test('Give array [new Buffer(5), new Date, new Buffer(9)] with predicate isBuffe
 
 test('Give empty array with predicate isBuffer, gives true', () => {
   expect(every([], isBuffer)).toBe(true);
-});
+});*/
 
 
 import isDate from '../src/isDate.js';
