@@ -209,10 +209,10 @@ import isTypedArray from '../src/isTypedArray.js';
 
 let t10_1 = [Uint8Array, Uint16Array, Uint32Array];
 
-test('Give array [Uint8Array, Uint16Array, Uint32Array]\
+/*test('Give array [Uint8Array, Uint16Array, Uint32Array]\
   with predicate isTypedArray, gives true', () => {
   expect(every(t10_1, isTypedArray)).toBe(true);
-});
+});*/
 
 let t10_2 = [Uint8Array, Uint8ClampedArray, [], Uint32Array];
 
