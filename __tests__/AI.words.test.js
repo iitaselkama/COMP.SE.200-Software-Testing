@@ -12,18 +12,18 @@ describe('words function', () => {
     jest.clearAllMocks();
   });
 
-  /*test('splits ASCII words correctly', () => {
+  test('splits ASCII words correctly', () => {
     const input = 'fred, barney, & pebbles';
     const result = words(input);
-    expect(result).toEqual(['fred', 'barney', 'pebbles']);
+    expect(result).toStrictEqual(['fred', 'barney', 'pebbles']);
     expect(unicodeWords).not.toHaveBeenCalled();
-  });
+  }); //Changed
 
   test('splits ASCII words with numbers', () => {
     const input = 'abc123 def456';
     const result = words(input);
-    expect(result).toEqual(['abc123', 'def456']);
-  });*/
+    expect(result).toStrictEqual(['abc123', 'def456']);
+  }); //Changed
 
   test('splits with custom regex pattern', () => {
     const input = 'fred, barney, & pebbles';
@@ -47,12 +47,12 @@ describe('words function', () => {
     expect(words()).toEqual([]);
   });*/
 
-  /*test('uses unicodeWords when unicode characters are present', () => {
+  test('uses unicodeWords when unicode characters are present', () => {
     const input = 'こんにちは 世界';
     const result = words(input);
     expect(unicodeWords).toHaveBeenCalledWith(input);
-    expect(result).toEqual(['こんにちは', '世界']);
-  });*/
+    expect(result).toStrictEqual(['こんにちは', '世界']);
+  }); //Changed
 
   test('detects mixed case patterns triggering unicodeWords', () => {
     const input = 'camelCaseExample';
@@ -78,10 +78,10 @@ describe('words function', () => {
     expect(result).toEqual([]);
   });
 
-  /*test('handles long string with mixed ASCII and Unicode', () => {
+  test('handles long string with mixed ASCII and Unicode', () => {
     const input = 'hello world 🌍🚀';
     const result = words(input);
     expect(unicodeWords).toHaveBeenCalledWith(input);
-    expect(result).toEqual(['hello', 'world', '🌍🚀']);
-  });*/
+    expect(result).toStrictEqual(['hello', 'world', '🌍🚀']);
+  }); //Changed
 });
